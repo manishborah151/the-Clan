@@ -11,26 +11,49 @@
       padding: 0;
       margin: 0;
     }
+    body {
+      overflow: hidden;
+    }
+    .vidBox {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
     #myVideo {
-      position: fixed;
+      object-fit: cover;
       right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .imgBox {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50vh;
+      z-index: 5;
     }
     img {
-      position: absolute;
-      top: 100px;
-      margin: auto;
       width: 100px;
-      border-radius: 50px;
-      left: 45%;
+      border-radius: 60px;
+      margin: auto;
     }
   </style>
   <body>
-    <video autoplay muted loop id="myVideo">
-      <source src="Coming soon Glitch video effects.mp4" type="video/mp4" />
-    </video>
-    <img src="IMG_20240704_105320.jpg" alt="" />
+    <div class="imgBox">
+      <img src="IMG_20240704_105320.jpg" alt="" />
+    </div>
+    <div class="vidBox">
+      <video autoplay muted loop id="myVideo">
+        <source
+          id="s1"
+          src="Coming soon Glitch video effects.mp4"
+          type="video/mp4"
+        />
+        <source id="s2" src="Coming soon phone.mp4" type="video/mp4" />
+      </video>
+    </div>
   </body>
 </html>
